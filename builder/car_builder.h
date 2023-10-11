@@ -33,8 +33,9 @@ public:
 
 class BuildCar {
 public:
-    explicit BuildCar(Car &car);
+    void BuildCarRegister(Car &car);
     void GetCarInfo();
+    void Init();
 
 private:
     Car *car_ = nullptr;

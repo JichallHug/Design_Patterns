@@ -32,7 +32,7 @@ void BuildRedBike::BuildWheel()
     std::cout << "Two Wheels ";
 }
 
-BuildCar::BuildCar(Car &car)
+void BuildCar::BuildCarRegister(Car &car)
 {
     car_ = &car;
 }
@@ -45,4 +45,16 @@ void BuildCar::GetCarInfo()
     std::cout << "Car" << std::endl;
 }
 
+void BuildCar::Init()
+{
+    BuildYellowCar yellowCar;
+    BuildCar productYellowCar;
+    productYellowCar.BuildCarRegister(yellowCar);
+    productYellowCar.GetCarInfo();
+
+    BuildRedBike redBike;
+    BuildCar productRedBike;
+    productRedBike.BuildCarRegister(redBike);
+    productRedBike.GetCarInfo();
+}
 }
